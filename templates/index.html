@@ -1,0 +1,693 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Yvonne Kileo — Information Technology student, software developer and networking enthusiast."
+    >
+
+    <meta
+        name="author"
+        content="Yvonne Kileo"
+    >
+
+    <title>Yvonne Kileo Anaeli | IT Student & Developer</title>
+
+
+   
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =========================
+         STYLESHEET
+    ========================== -->
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+
+            <!-- Logo -->
+
+            <a href="{% url 'home' %}" class="logo">
+                Yvonne Anaeli<span>.</span>
+            </a>
+
+
+            <!-- Main Navigation -->
+
+            <nav class="nav-links">
+
+                <a href="{% url 'about' %}">About</a>
+
+                <a href="{% url 'skills' %}">Skills</a>
+
+                <a href="{% url 'projects' %}">Projects</a>
+
+                <a href="{% url 'experience' %}">Experience</a>
+
+                <a href="{% url 'contact' %}">Contact</a>
+
+            </nav>
+
+
+            <!-- Navigation Actions -->
+
+            <div class="nav-actions">
+
+                <!-- Theme button will be controlled by JavaScript later -->
+
+                <button
+                    type="button"
+                    class="theme-toggle"
+                    id="themeToggle"
+                    aria-label="Toggle dark and light mode"
+                >
+                    ☼
+                </button>
+
+
+                <a
+                    href="{% url 'contact' %}"
+                    class="nav-button"
+                >
+                    Let's Talk
+                </a>
+
+            </div>
+
+
+            <!-- Mobile Menu Button -->
+
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main>
+
+
+        <!-- =========================
+             HERO SECTION
+        ========================== -->
+
+        <section
+            id="home"
+            class="hero"
+        >
+
+            <div class="hero-container">
+
+
+                <!-- LEFT SIDE -->
+
+                <div class="hero-content">
+
+
+                    <!-- Small Introduction -->
+
+                    <p class="hero-eyebrow">
+                        HELLO, I'M YVONNE
+                    </p>
+
+
+                    <!-- Main Heading -->
+
+                    <h1 class="hero-title">
+
+                        I build
+
+                        <span class="gradient-text">
+                            digital experiences.
+                        </span>
+
+                    </h1>
+
+
+                    <!-- Professional Title -->
+
+                    <h2 class="hero-subtitle">
+
+                        Information Technology Student
+                        <span>•</span>
+                        Developer
+                        <span>•</span>
+                        Networking Enthusiast
+
+                    </h2>
+
+
+                    <!-- Introduction -->
+
+                    <p class="hero-description">
+
+                        I'm an Information Technology student who enjoys
+                        turning ideas and real-world problems into practical
+                        technology solutions through software development,
+                        databases and networking.
+
+                    </p>
+
+
+                    <!-- Hero Buttons -->
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="{% url 'projects' %}"
+                            class="btn btn-primary"
+                        >
+                            Explore My Work
+
+                            <span class="btn-arrow">
+                                ↗
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="{% url 'contact' %}"
+                            class="btn btn-secondary"
+                        >
+                            Let's Connect
+                        </a>
+
+                    </div>
+
+
+                    <!-- Social Links -->
+
+                    <div class="hero-socials">
+
+                        <span>
+                            FIND ME ON
+                        </span>
+
+
+                        <a
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub
+                        </a>
+
+
+                        <a
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            LinkedIn
+                        </a>
+
+
+                        <a
+                            href="mailto:your@email.com"
+                        >
+                            Email
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     RIGHT SIDE — VISUAL
+                ========================== -->
+
+                <div class="hero-visual">
+
+                    <div class="hero-photo-wrapper">
+
+                        <div class="hero-photo-glow"></div>
+
+                        <img
+                            src="{% static 'IMAGE 1.jpeg' %}"
+                            alt="Yvonne Kileo"
+                        >
+
+                        <div class="photo-frame"></div>
+
+                        <div class="floating-badge badge-top">
+                            <span></span>
+                            IT & SOFTWARE
+                        </div>
+
+                        <div class="floating-badge badge-bottom">
+                            <span></span>
+                            NAIROBI, KENYA
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 SCROLL INDICATOR
+            ========================== -->
+
+            <a
+                href="#intro"
+                class="scroll-indicator"
+            >
+
+                <span>
+                    SCROLL TO EXPLORE
+                </span>
+
+                <span class="scroll-arrow">
+                    ↓
+                </span>
+
+            </a>
+
+        </section>
+
+
+
+        <!-- =========================
+             QUICK INTRODUCTION
+        ========================== -->
+
+        <section
+            id="intro"
+            class="intro-section"
+        >
+
+            <div class="section-container">
+
+
+                <div class="intro-label">
+                    A LITTLE ABOUT ME
+                </div>
+
+
+                <div class="intro-content">
+
+                    <h2>
+
+                        Technology is more interesting
+                        when it
+
+                        <span class="gradient-text">
+                            solves something real.
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        My work combines software development,
+                        database systems and networking. I enjoy
+                        learning how systems work and creating
+                        solutions that make everyday processes
+                        simpler and more efficient.
+
+                    </p>
+
+
+                    <a
+                        href="{% url 'about' %}"
+                        class="text-link"
+                    >
+
+                        Discover more about me
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FEATURED PROJECT PREVIEW
+        ========================== -->
+
+        <section
+            class="featured-section"
+        >
+
+            <div class="section-container">
+
+
+                <div class="section-top">
+
+                    <div>
+
+                        <span class="section-number">
+                            01
+                        </span>
+
+                        <span class="section-label">
+                            FEATURED PROJECT
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="{% url 'projects' %}"
+                        class="view-all-link"
+                    >
+                        View all projects →
+                    </a>
+
+                </div>
+
+
+                <div class="featured-preview">
+
+
+                    <!-- Project Visual -->
+
+                    <div class="project-preview-image">
+
+                        <div class="project-window">
+
+                            <div class="project-window-header">
+
+                                <div class="window-controls">
+
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                </div>
+
+                                <span>
+                                    Queue Dashboard
+                                </span>
+
+                            </div>
+
+
+                            <div class="dashboard-preview">
+
+
+                                <div class="dashboard-title">
+                                    Today's Queue
+                                </div>
+
+
+                                <div class="queue-number">
+                                    08
+                                </div>
+
+
+                                <div class="queue-label">
+                                    Applicants Waiting
+                                </div>
+
+
+                                <div class="queue-bar">
+
+                                    <span></span>
+
+                                </div>
+
+
+                                <div class="dashboard-cards">
+
+                                    <div>
+                                        <small>
+                                            CURRENT TOKEN
+                                        </small>
+
+                                        <strong>
+                                            B017
+                                        </strong>
+                                    </div>
+
+
+                                    <div>
+                                        <small>
+                                            SERVING
+                                        </small>
+
+                                        <strong>
+                                            Counter 03
+                                        </strong>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Project Information -->
+
+                    <div class="featured-project-info">
+
+                        <span class="project-category">
+                            SMART QUEUE SYSTEM
+                        </span>
+
+
+                        <h2>
+                            Smart Appointment &
+                            Queue Tracking System
+                        </h2>
+
+
+                        <p>
+
+                            A digital solution designed to combine
+                            appointment booking with real-time queue
+                            tracking for birth certificate services
+                            at Huduma Centre City Square.
+
+                        </p>
+
+
+                        <div class="project-technologies">
+
+                            <span>
+                                Python
+                            </span>
+
+                            <span>
+                                Django
+                            </span>
+
+                            <span>
+                                MySQL
+                            </span>
+
+                            <span>
+                                REST API
+                            </span>
+
+                            <span>
+                                WebSockets
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="{% url 'projects' %}"
+                            class="project-link"
+                        >
+
+                            Explore Project
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CTA SECTION
+        ========================== -->
+
+        <section
+            class="home-cta"
+        >
+
+            <div class="section-container">
+
+                <p class="section-label">
+                    HAVE AN IDEA?
+                </p>
+
+
+                <h2>
+
+                    Let's create something
+                    <span class="gradient-text">
+                        meaningful.
+                    </span>
+
+                </h2>
+
+
+                <a
+                    href="{% url 'contact' %}"
+                    class="btn btn-primary"
+                >
+
+                    Start a conversation
+
+                    <span>
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <a
+                href="{% url 'home' %}"
+                class="logo"
+            >
+                Yvonne Anaeli<span>.</span>
+            </a>
+
+
+            <p>
+                © Yvonne Kileo.
+                All rights reserved.
+            </p>
+
+
+            <div class="footer-socials">
+
+                <a
+                    href="https://github.com/yvonne-kileo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                >
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/yvonne-kileo-14631b34b"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a
+                    href="https://www.instagram.com/ki_le_o"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="{% static 'script.js' %}"></script>
+
+</body>
+
+</html>
+

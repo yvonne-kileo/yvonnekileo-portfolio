@@ -1,0 +1,1765 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         BASIC SETTINGS
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Get in touch with Yvonne Kileo."
+    >
+
+    <meta
+        name="author"
+        content="Yvonne Kileo"
+    >
+
+    <title>Contact | Yvonne Kileo</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         MAIN CSS
+    ====================================================== -->
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+    <!-- =====================================================
+         CONTACT PAGE CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =================================================
+           CONTACT HERO
+        ================================================= */
+
+        .contact-hero {
+
+            position: relative;
+
+            min-height: 70vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding-top: 120px;
+
+            padding-bottom: 100px;
+
+            overflow: hidden;
+
+        }
+
+
+        .contact-hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 700px;
+
+            height: 700px;
+
+            top: -300px;
+
+            right: -250px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139, 92, 246, 0.18),
+                    transparent 68%
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        .contact-hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 450px;
+
+            height: 450px;
+
+            bottom: -300px;
+
+            left: -180px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(59, 130, 246, 0.10),
+                    transparent 70%
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        .contact-hero-container {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: min(
+                calc(100% - 48px),
+                1200px
+            );
+
+            margin: 0 auto;
+
+        }
+
+
+        .contact-number {
+
+            display: block;
+
+            margin-bottom: 20px;
+
+            color: #a78bfa;
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                monospace;
+
+            font-size: 11px;
+
+            letter-spacing: 0.18em;
+
+        }
+
+
+        .contact-hero h1 {
+
+            max-width: 1050px;
+
+            font-size: clamp(
+                55px,
+                9vw,
+                120px
+            );
+
+            line-height: 0.9;
+
+            letter-spacing: -0.07em;
+
+            font-weight: 800;
+
+        }
+
+
+        .contact-description {
+
+            max-width: 680px;
+
+            margin-top: 35px;
+
+            color: var(--text-secondary);
+
+            font-size: 16px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* =================================================
+           CONTACT SECTION
+        ================================================= */
+
+        .contact-section {
+
+            padding: 130px 0;
+
+            background: var(--bg-secondary);
+
+            border-top: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--border);
+
+        }
+
+
+        .contact-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                0.8fr
+                1.2fr;
+
+            gap: 80px;
+
+            align-items: start;
+
+        }
+
+
+        /* =================================================
+           CONTACT INFORMATION
+        ================================================= */
+
+        .contact-info-label {
+
+            color: var(--accent-light);
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.2em;
+
+        }
+
+
+        .contact-info h2 {
+
+            max-width: 500px;
+
+            margin-top: 18px;
+
+            font-size: clamp(
+                38px,
+                5vw,
+                65px
+            );
+
+            line-height: 1;
+
+            letter-spacing: -0.06em;
+
+        }
+
+
+        .contact-info > p {
+
+            max-width: 500px;
+
+            margin-top: 25px;
+
+            color: var(--text-secondary);
+
+            font-size: 13px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* =================================================
+           CONTACT DETAILS
+        ================================================= */
+
+        .contact-details {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+
+            margin-top: 45px;
+
+        }
+
+
+        .contact-detail {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+            padding: 18px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            text-decoration: none;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
+
+        }
+
+
+        .contact-detail:hover {
+
+            transform: translateX(6px);
+
+            border-color:
+                rgba(167,139,250,0.3);
+
+            background:
+                rgba(139,92,246,0.06);
+
+        }
+
+
+        .contact-detail-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            flex-shrink: 0;
+
+            display: grid;
+
+            place-items: center;
+
+            color: var(--accent-light);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            background:
+                rgba(139,92,246,0.07);
+
+            font-size: 15px;
+
+        }
+
+
+        .contact-detail-text {
+
+            min-width: 0;
+
+        }
+
+
+        .contact-detail-text span {
+
+            display: block;
+
+            margin-bottom: 4px;
+
+            color: var(--text-muted);
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.14em;
+
+        }
+
+
+        .contact-detail-text strong {
+
+            display: block;
+
+            overflow: hidden;
+
+            color: var(--text);
+
+            font-size: 12px;
+
+            font-weight: 500;
+
+            text-overflow: ellipsis;
+
+            white-space: nowrap;
+
+        }
+
+
+        /* =================================================
+           SOCIAL LINKS
+        ================================================= */
+
+        .social-section {
+
+            margin-top: 40px;
+
+            padding-top: 30px;
+
+            border-top: 1px solid var(--border);
+
+        }
+
+
+        .social-section > span {
+
+            color: var(--text-muted);
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.15em;
+
+        }
+
+
+        .social-links {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 9px;
+
+            margin-top: 15px;
+
+        }
+
+
+        .social-link {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 9px 13px;
+
+            color: var(--text-secondary);
+
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+
+            background:
+                rgba(255,255,255,0.02);
+
+            text-decoration: none;
+
+            font-size: 9px;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                color 0.3s ease;
+
+        }
+
+
+        .social-link:hover {
+
+            transform: translateY(-3px);
+
+            color: var(--text);
+
+            border-color:
+                rgba(167,139,250,0.35);
+
+        }
+
+
+        /* =================================================
+           CONTACT FORM
+        ================================================= */
+
+        .contact-form-wrapper {
+
+            position: relative;
+
+            padding: 40px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.045),
+                    rgba(255,255,255,0.015)
+                );
+
+            overflow: hidden;
+
+        }
+
+
+        .contact-form-wrapper::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+
+            height: 350px;
+
+            top: -250px;
+
+            right: -150px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139,92,246,0.12),
+                    transparent 70%
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        .form-heading {
+
+            position: relative;
+
+            z-index: 2;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .form-heading span {
+
+            color: var(--accent-light);
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.18em;
+
+        }
+
+
+        .form-heading h3 {
+
+            margin-top: 10px;
+
+            font-size: 27px;
+
+            letter-spacing: -0.04em;
+
+        }
+
+
+        /* =================================================
+           FORM GROUP
+        ================================================= */
+
+        .contact-form {
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .form-row {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 15px;
+
+        }
+
+
+        .form-group {
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: var(--text-secondary);
+
+            font-size: 9px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.08em;
+
+        }
+
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+
+            width: 100%;
+
+            padding: 15px 16px;
+
+            color: var(--text);
+
+            border: 1px solid var(--border);
+
+            border-radius: 11px;
+
+            outline: none;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            font-family: inherit;
+
+            font-size: 12px;
+
+            transition:
+                border-color 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+
+        }
+
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+
+            color: var(--text-muted);
+
+        }
+
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+
+            border-color:
+                rgba(167,139,250,0.5);
+
+            background:
+                rgba(139,92,246,0.035);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(139,92,246,0.07);
+
+        }
+
+
+        .form-group textarea {
+
+            min-height: 160px;
+
+            resize: vertical;
+
+        }
+
+
+        .form-group select {
+
+            cursor: pointer;
+
+        }
+
+
+        /* =================================================
+           FORM BUTTON
+        ================================================= */
+
+        .form-submit {
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin-top: 8px;
+
+            padding: 16px 22px;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7c3aed,
+                    #4f46e5
+                );
+
+            cursor: pointer;
+
+            font-family: inherit;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.04em;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+        }
+
+
+        .form-submit:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(124,58,237,0.2);
+
+        }
+
+
+        .form-submit span {
+
+            font-size: 15px;
+
+            transition:
+                transform 0.3s ease;
+
+        }
+
+
+        .form-submit:hover span {
+
+            transform:
+                translate(3px, -3px);
+
+        }
+
+
+        /* =================================================
+           FORM MESSAGE
+        ================================================= */
+
+        .form-message {
+
+            display: none;
+
+            margin-top: 15px;
+
+            padding: 12px 15px;
+
+            border: 1px solid
+                rgba(74,222,128,0.2);
+
+            border-radius: 10px;
+
+            color: #86efac;
+
+            background:
+                rgba(34,197,94,0.05);
+
+            font-size: 10px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .form-message.show {
+
+            display: block;
+
+        }
+
+
+        /* =================================================
+           AVAILABILITY SECTION
+        ================================================= */
+
+        .availability-section {
+
+            padding: 120px 0;
+
+        }
+
+
+        .availability-card {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                auto;
+
+            gap: 40px;
+
+            align-items: center;
+
+            padding: 45px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(139,92,246,0.08),
+                    rgba(255,255,255,0.02)
+                );
+
+        }
+
+
+        .availability-label {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: #86efac;
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.15em;
+
+        }
+
+
+        .availability-dot {
+
+            width: 6px;
+
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: #4ade80;
+
+            box-shadow:
+                0 0 12px
+                rgba(74,222,128,0.6);
+
+        }
+
+
+        .availability-card h3 {
+
+            margin-top: 12px;
+
+            font-size: 28px;
+
+            letter-spacing: -0.04em;
+
+        }
+
+
+        .availability-card p {
+
+            max-width: 650px;
+
+            margin-top: 10px;
+
+            color: var(--text-secondary);
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =================================================
+           FINAL CTA
+        ================================================= */
+
+        .contact-final {
+
+            padding: 150px 0;
+
+            text-align: center;
+
+            background: var(--bg-secondary);
+
+            border-top: 1px solid var(--border);
+
+        }
+
+
+        .contact-final h2 {
+
+            max-width: 900px;
+
+            margin: 20px auto 35px;
+
+            font-size: clamp(
+                45px,
+                6vw,
+                85px
+            );
+
+            line-height: 0.95;
+
+            letter-spacing: -0.07em;
+
+        }
+
+
+        .contact-final p {
+
+            max-width: 550px;
+
+            margin: 0 auto 35px;
+
+            color: var(--text-secondary);
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =================================================
+           RESPONSIVE
+        ================================================= */
+
+        @media (max-width: 900px) {
+
+            .contact-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 60px;
+
+            }
+
+
+            .availability-card {
+
+                grid-template-columns: 1fr;
+
+                gap: 25px;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .contact-hero {
+
+                min-height: auto;
+
+                padding-top: 130px;
+
+                padding-bottom: 90px;
+
+            }
+
+
+            .contact-hero-container {
+
+                width:
+                    calc(100% - 32px);
+
+            }
+
+
+            .contact-form-wrapper {
+
+                padding: 25px;
+
+                border-radius: 18px;
+
+            }
+
+
+            .form-row {
+
+                grid-template-columns: 1fr;
+
+                gap: 0;
+
+            }
+
+
+            .availability-card {
+
+                padding: 30px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+
+            <!-- Logo -->
+
+            <a href="{% url 'home' %}" class="logo">
+                YK<span>.</span>
+            </a>
+
+
+            <!-- Navigation -->
+
+            <nav class="nav-links">
+
+                <a href="{% url 'home' %}">
+                    Home
+                </a>
+
+                <a href="{% url 'about' %}" class="active">
+                    About
+                </a>
+
+                <a href="{% url 'skills' %}">
+                    Skills
+                </a>
+
+                <a href="{% url 'projects' %}">
+                    Projects
+                </a>
+
+                <a href="{% url 'experience' %}">
+                    Experience
+                </a>
+
+                <a href="{% url 'contact' %}">
+                    Contact
+                </a>
+            </nav>
+
+
+            <!-- Navigation actions -->
+
+            <div class="nav-actions">
+
+                <button
+                    type="button"
+                    class="theme-toggle"
+                    id="themeToggle"
+                    aria-label="Toggle theme"
+                >
+                    ☼
+                </button>
+
+
+                <a
+                    href="contact.html"
+                    class="nav-button"
+                >
+                    Let's Talk
+                </a>
+
+            </div>
+
+
+            <!-- Mobile menu -->
+
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="contact-hero">
+
+            <div class="contact-hero-container">
+
+                <span class="contact-number">
+                    05 / CONTACT
+                </span>
+
+
+                <h1>
+
+                    Let's make
+
+                    <span class="gradient-text">
+                        something.
+                    </span>
+
+                </h1>
+
+
+                <p class="contact-description">
+
+                    Whether you have a project idea, an
+                    opportunity, a question, or simply want
+                    to connect, I'd love to hear from you.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTACT AREA
+        ================================================== -->
+
+        <section class="contact-section">
+
+            <div class="section-container">
+
+                <div class="contact-grid">
+
+
+                    <!-- =================================================
+                         CONTACT INFORMATION
+                    ================================================== -->
+
+                    <div class="contact-info">
+
+                        <span class="contact-info-label">
+                            GET IN TOUCH
+                        </span>
+
+
+                        <h2>
+
+                            Start a
+                            <span class="gradient-text">
+                                conversation.
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+
+                            I'm open to connecting about
+                            technology, software development,
+                            networking, projects, internships,
+                            opportunities and interesting
+                            ideas.
+
+                        </p>
+
+
+
+                        <!-- Contact details -->
+
+                        <div class="contact-details">
+
+
+                            <!-- Email -->
+
+                            <a
+                                href="mailto:your@email.com"
+                                class="contact-detail"
+                            >
+
+                                <div class="contact-detail-icon">
+                                    @
+                                </div>
+
+
+                                <div class="contact-detail-text">
+
+                                    <span>
+                                        EMAIL
+                                    </span>
+
+                                    <strong>
+                                        your@email.com
+                                    </strong>
+
+                                </div>
+
+                            </a>
+
+
+
+                            <!-- Location -->
+
+                            <div class="contact-detail">
+
+                                <div class="contact-detail-icon">
+                                    ◉
+                                </div>
+
+
+                                <div class="contact-detail-text">
+
+                                    <span>
+                                        LOCATION
+                                    </span>
+
+                                    <strong>
+                                        Nairobi, Kenya
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Portfolio -->
+
+                            <div class="contact-detail">
+
+                                <div class="contact-detail-icon">
+                                    ↗
+                                </div>
+
+
+                                <div class="contact-detail-text">
+
+                                    <span>
+                                        FOCUS
+                                    </span>
+
+                                    <strong>
+                                        IT & Software Development
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Social links -->
+
+                        <div class="social-section">
+
+                            <span>
+                                FIND ME ONLINE
+                            </span>
+
+
+                            <div class="social-links">
+
+
+                                <a
+                                    href="#"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="social-link"
+                                >
+                                    GitHub
+                                    ↗
+                                </a>
+
+
+                                <a
+                                    href="#"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="social-link"
+                                >
+                                    LinkedIn
+                                    ↗
+                                </a>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         CONTACT FORM
+                    ================================================== -->
+
+                    <div class="contact-form-wrapper">
+
+
+                        <div class="form-heading">
+
+                            <span>
+                                SEND A MESSAGE
+                            </span>
+
+
+                            <h3>
+                                Tell me what's on your mind.
+                            </h3>
+
+                        </div>
+
+
+                        <form
+                            class="contact-form"
+                            id="contactForm"
+                        >
+
+
+                            <!-- Name + Email -->
+
+                            <div class="form-row">
+
+
+                                <div class="form-group">
+
+                                    <label for="name">
+                                        YOUR NAME
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Your name"
+                                        autocomplete="name"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="email">
+                                        YOUR EMAIL
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="you@example.com"
+                                        autocomplete="email"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Subject -->
+
+                            <div class="form-group">
+
+                                <label for="subject">
+                                    WHAT IS THIS ABOUT?
+                                </label>
+
+
+                                <select
+                                    id="subject"
+                                    name="subject"
+                                    required
+                                >
+
+                                    <option
+                                        value=""
+                                        selected
+                                        disabled
+                                    >
+                                        Select an option
+                                    </option>
+
+                                    <option value="project">
+                                        Project
+                                    </option>
+
+                                    <option value="opportunity">
+                                        Job / Opportunity
+                                    </option>
+
+                                    <option value="collaboration">
+                                        Collaboration
+                                    </option>
+
+                                    <option value="question">
+                                        General Question
+                                    </option>
+
+                                    <option value="other">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <!-- Message -->
+
+                            <div class="form-group">
+
+                                <label for="message">
+                                    YOUR MESSAGE
+                                </label>
+
+
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    placeholder="Tell me a little about what you'd like to discuss..."
+                                    required
+                                ></textarea>
+
+                            </div>
+
+
+
+                            <!-- Submit -->
+
+                            <button
+                                type="submit"
+                                class="form-submit"
+                            >
+
+                                Send Message
+
+                                <span>
+                                    ↗
+                                </span>
+
+                            </button>
+
+
+                            <!-- Success message -->
+
+                            <div
+                                class="form-message"
+                                id="formMessage"
+                            >
+
+                                Your message is ready to be sent.
+                                I'll get back to you as soon as
+                                possible.
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             AVAILABILITY
+        ================================================== -->
+
+        <section class="availability-section">
+
+            <div class="section-container">
+
+                <div class="availability-card">
+
+
+                    <div>
+
+                        <span class="availability-label">
+
+                            <span
+                                class="availability-dot"
+                            ></span>
+
+                            OPEN TO OPPORTUNITIES
+
+                        </span>
+
+
+                        <h3>
+                            Let's connect.
+                        </h3>
+
+
+                        <p>
+
+                            I'm interested in opportunities
+                            that allow me to continue growing
+                            my technical skills, contribute
+                            to meaningful projects and gain
+                            more practical experience in IT.
+
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="mailto:your@email.com"
+                        class="btn btn-primary"
+                    >
+
+                        Email Me
+
+                        <span>
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FINAL CTA
+        ================================================== -->
+
+        <section class="contact-final">
+
+            <div class="section-container">
+
+                <span class="contact-info-label">
+                    THANK YOU FOR VISITING
+                </span>
+
+
+                <h2>
+
+                    Until the next
+
+                    <span class="gradient-text">
+                        idea.
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Thanks for taking the time to explore
+                    my portfolio. I look forward to connecting
+                    and creating something meaningful.
+
+                </p>
+
+
+                <a
+                    href="../index.html"
+                    class="btn btn-primary"
+                >
+
+                    Back To Home
+
+                    <span>
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <a
+                href="{% url 'home' %}"
+                class="logo"
+            >
+                Yvonne Anaeli<span>.</span>
+            </a>
+
+
+            <p>
+                © Yvonne Kileo.
+                All rights reserved.
+            </p>
+
+
+            <div class="footer-socials">
+
+                <a
+                    href="https://github.com/yvonne-kileo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                >
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/yvonne-kileo-14631b34b"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a
+                    href="https://www.instagram.com/ki_le_o"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="../js/script.js"></script>
+
+
+    <!-- =====================================================
+         CONTACT FORM JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        const contactForm =
+            document.getElementById("contactForm");
+
+        const formMessage =
+            document.getElementById("formMessage");
+
+
+        if (contactForm && formMessage) {
+
+            contactForm.addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+                    formMessage.classList.add("show");
+
+                    contactForm.reset();
+
+                }
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>

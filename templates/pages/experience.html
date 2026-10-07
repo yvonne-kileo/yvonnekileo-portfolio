@@ -1,0 +1,2084 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         BASIC SETTINGS
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Professional experience and technical attachment experience of Yvonne Kileo."
+    >
+
+    <meta
+        name="author"
+        content="Yvonne Kileo"
+    >
+
+    <title>Experience | Yvonne Kileo</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         MAIN CSS
+    ====================================================== -->
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+    <!-- =====================================================
+         EXPERIENCE PAGE CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =================================================
+           EXPERIENCE HERO
+        ================================================= */
+
+        .experience-hero {
+
+            position: relative;
+
+            min-height: 70vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding-top: 120px;
+
+            padding-bottom: 100px;
+
+            overflow: hidden;
+
+        }
+
+
+        .experience-hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 650px;
+
+            height: 650px;
+
+            top: -250px;
+
+            right: -200px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139, 92, 246, 0.18),
+                    transparent 68%
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        .experience-hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 450px;
+
+            height: 450px;
+
+            bottom: -300px;
+
+            left: -150px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(59, 130, 246, 0.10),
+                    transparent 70%
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        .experience-hero-container {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: min(
+                calc(100% - 48px),
+                1200px
+            );
+
+            margin: 0 auto;
+
+        }
+
+
+        .experience-number {
+
+            display: block;
+
+            margin-bottom: 20px;
+
+            color: #a78bfa;
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                monospace;
+
+            font-size: 11px;
+
+            letter-spacing: 0.18em;
+
+        }
+
+
+        .experience-hero h1 {
+
+            max-width: 1050px;
+
+            font-size: clamp(
+                55px,
+                8vw,
+                110px
+            );
+
+            line-height: 0.92;
+
+            letter-spacing: -0.07em;
+
+            font-weight: 800;
+
+        }
+
+
+        .experience-description {
+
+            max-width: 700px;
+
+            margin-top: 35px;
+
+            color: var(--text-secondary);
+
+            font-size: 16px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* =================================================
+           EXPERIENCE SECTION
+        ================================================= */
+
+        .experience-section {
+
+            padding: 140px 0;
+
+            background: var(--bg-secondary);
+
+            border-top: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--border);
+
+        }
+
+
+        .experience-header {
+
+            margin-bottom: 70px;
+
+        }
+
+
+        .experience-label {
+
+            color: var(--accent-light);
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.2em;
+
+        }
+
+
+        .experience-header h2 {
+
+            max-width: 800px;
+
+            margin-top: 15px;
+
+            font-size: clamp(
+                40px,
+                5vw,
+                68px
+            );
+
+            line-height: 1;
+
+            letter-spacing: -0.06em;
+
+        }
+
+
+        /* =================================================
+           MAIN EXPERIENCE CARD
+        ================================================= */
+
+        .experience-card {
+
+            position: relative;
+
+            padding: 55px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(124,58,237,0.11),
+                    rgba(255,255,255,0.025)
+                );
+
+            overflow: hidden;
+
+        }
+
+
+        .experience-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+
+            height: 500px;
+
+            top: -300px;
+
+            right: -200px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139,92,246,0.16),
+                    transparent 70%
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        .experience-top {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                auto;
+
+            gap: 40px;
+
+            padding-bottom: 40px;
+
+            border-bottom: 1px solid var(--border);
+
+        }
+
+
+        .experience-type {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-bottom: 18px;
+
+            color: #c4b5fd;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.15em;
+
+        }
+
+
+        .experience-type-dot {
+
+            width: 6px;
+
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: currentColor;
+
+        }
+
+
+        .experience-top h3 {
+
+            font-size: clamp(
+                32px,
+                4vw,
+                55px
+            );
+
+            line-height: 1;
+
+            letter-spacing: -0.05em;
+
+        }
+
+
+        .experience-role {
+
+            margin-top: 14px;
+
+            color: var(--accent-light);
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+        }
+
+
+        .experience-date {
+
+            align-self: start;
+
+            padding: 10px 15px;
+
+            color: var(--text-secondary);
+
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                monospace;
+
+            font-size: 9px;
+
+            white-space: nowrap;
+
+        }
+
+
+        /* =================================================
+           EXPERIENCE INTRO
+        ================================================= */
+
+        .experience-intro {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 850px;
+
+            padding: 40px 0;
+
+        }
+
+
+        .experience-intro p {
+
+            color: var(--text-secondary);
+
+            font-size: 15px;
+
+            line-height: 1.95;
+
+        }
+
+
+        .experience-intro p strong {
+
+            color: var(--text);
+
+            font-weight: 600;
+
+        }
+
+
+        /* =================================================
+           LEARNING GRID
+        ================================================= */
+
+        .learning-grid {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+
+        }
+
+
+        .learning-card {
+
+            position: relative;
+
+            min-height: 220px;
+
+            padding: 30px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                background 0.35s ease;
+
+        }
+
+
+        .learning-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 160px;
+
+            height: 160px;
+
+            right: -90px;
+
+            bottom: -90px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139,92,246,0.12),
+                    transparent 70%
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        .learning-card:hover {
+
+            transform: translateY(-6px);
+
+            border-color:
+                rgba(167,139,250,0.3);
+
+            background:
+                rgba(255,255,255,0.04);
+
+        }
+
+
+        .learning-number {
+
+            display: block;
+
+            margin-bottom: 25px;
+
+            color: var(--text-muted);
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                monospace;
+
+            font-size: 10px;
+
+        }
+
+
+        .learning-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            display: grid;
+
+            place-items: center;
+
+            margin-bottom: 20px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            color: var(--accent-light);
+
+            background:
+                rgba(139,92,246,0.07);
+
+            font-size: 17px;
+
+        }
+
+
+        .learning-card h4 {
+
+            font-size: 18px;
+
+            letter-spacing: -0.02em;
+
+        }
+
+
+        .learning-card p {
+
+            margin-top: 10px;
+
+            color: var(--text-secondary);
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =================================================
+           TECHNICAL SKILLS ACQUIRED
+        ================================================= */
+
+        .technical-section {
+
+            padding: 140px 0;
+
+        }
+
+
+        .technical-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                0.7fr
+                1.3fr;
+
+            gap: 80px;
+
+        }
+
+
+        .technical-heading h2 {
+
+            margin-top: 15px;
+
+            font-size: clamp(
+                40px,
+                5vw,
+                68px
+            );
+
+            line-height: 1;
+
+            letter-spacing: -0.06em;
+
+        }
+
+
+        .technical-heading p {
+
+            max-width: 350px;
+
+            margin-top: 25px;
+
+            color: var(--text-secondary);
+
+            font-size: 13px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* =================================================
+           TECHNICAL LIST
+        ================================================= */
+
+        .technical-list {
+
+            border-top: 1px solid var(--border);
+
+        }
+
+
+        .technical-item {
+
+            display: grid;
+
+            grid-template-columns:
+                55px
+                1fr
+                auto;
+
+            gap: 20px;
+
+            align-items: center;
+
+            padding: 25px 0;
+
+            border-bottom: 1px solid var(--border);
+
+            transition:
+                padding 0.3s ease;
+
+        }
+
+
+        .technical-item:hover {
+
+            padding-left: 10px;
+
+            padding-right: 10px;
+
+        }
+
+
+        .technical-item-number {
+
+            color: var(--text-muted);
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                monospace;
+
+            font-size: 10px;
+
+        }
+
+
+        .technical-item h4 {
+
+            font-size: 16px;
+
+        }
+
+
+        .technical-item p {
+
+            margin-top: 5px;
+
+            color: var(--text-muted);
+
+            font-size: 11px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .technical-tag {
+
+            padding: 7px 11px;
+
+            color: var(--accent-light);
+
+            border: 1px solid
+                rgba(167,139,250,0.2);
+
+            border-radius: 50px;
+
+            background:
+                rgba(139,92,246,0.06);
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.08em;
+
+        }
+
+
+        /* =================================================
+           EXPERIENCE TIMELINE
+        ================================================= */
+
+        .timeline-section {
+
+            padding: 140px 0;
+
+            background: var(--bg-secondary);
+
+            border-top: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--border);
+
+        }
+
+
+        .timeline-header {
+
+            margin-bottom: 70px;
+
+        }
+
+
+        .timeline-header h2 {
+
+            margin-top: 15px;
+
+            font-size: clamp(
+                40px,
+                5vw,
+                68px
+            );
+
+            line-height: 1;
+
+            letter-spacing: -0.06em;
+
+        }
+
+
+        .timeline {
+
+            position: relative;
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+        }
+
+
+        .timeline::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            bottom: 0;
+
+            left: 24px;
+
+            width: 1px;
+
+            background: var(--border);
+
+        }
+
+
+        .timeline-item {
+
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns:
+                50px
+                1fr;
+
+            gap: 35px;
+
+            padding-bottom: 55px;
+
+        }
+
+
+        .timeline-item:last-child {
+
+            padding-bottom: 0;
+
+        }
+
+
+        .timeline-dot {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 49px;
+
+            height: 49px;
+
+            display: grid;
+
+            place-items: center;
+
+            border: 1px solid var(--border);
+
+            border-radius: 50%;
+
+            background: var(--bg);
+
+            color: var(--accent-light);
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                monospace;
+
+            font-size: 9px;
+
+        }
+
+
+        .timeline-content {
+
+            padding: 5px 0;
+
+        }
+
+
+        .timeline-content h3 {
+
+            font-size: 20px;
+
+        }
+
+
+        .timeline-content p {
+
+            margin-top: 10px;
+
+            color: var(--text-secondary);
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =================================================
+           CTA
+        ================================================= */
+
+        .experience-cta {
+
+            padding: 150px 0;
+
+            text-align: center;
+
+        }
+
+
+        .experience-cta h2 {
+
+            max-width: 850px;
+
+            margin: 20px auto 35px;
+
+            font-size: clamp(
+                45px,
+                6vw,
+                80px
+            );
+
+            line-height: 0.95;
+
+            letter-spacing: -0.07em;
+
+        }
+
+
+        /* =================================================
+           RESPONSIVE
+        ================================================= */
+
+        @media (max-width: 850px) {
+
+            .experience-card {
+
+                padding: 35px;
+
+            }
+
+
+            .experience-top {
+
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+
+            }
+
+
+            .experience-date {
+
+                width: fit-content;
+
+            }
+
+
+            .technical-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .experience-hero {
+
+                min-height: auto;
+
+                padding-top: 130px;
+
+                padding-bottom: 90px;
+
+            }
+
+
+            .experience-hero-container {
+
+                width:
+                    calc(100% - 32px);
+
+            }
+
+
+            .experience-card {
+
+                padding: 25px;
+
+                border-radius: 20px;
+
+            }
+
+
+            .learning-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .learning-card {
+
+                min-height: auto;
+
+            }
+
+
+            .technical-item {
+
+                grid-template-columns:
+                    40px
+                    1fr;
+
+            }
+
+
+            .technical-tag {
+
+                grid-column: 2;
+
+                width: fit-content;
+
+            }
+
+
+            .timeline-item {
+
+                gap: 20px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+
+            <!-- Logo -->
+
+            <a href="{% url 'home' %}" class="logo">
+                YK<span>.</span>
+            </a>
+                
+
+
+            <!-- Navigation -->
+
+            <nav class="nav-links">
+
+                <a href="{% url 'home' %}">
+                    Home
+                </a>
+
+                <a href="{% url 'about' %}" class="active">
+                    About
+                </a>
+
+                <a href="{% url 'skills' %}">
+                    Skills
+                </a>
+
+                <a href="{% url 'projects' %}">
+                    Projects
+                </a>
+
+                <a href="{% url 'experience' %}">
+                    Experience
+                </a>
+
+                <a href="{% url 'contact' %}">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- Navigation actions -->
+
+            <div class="nav-actions">
+
+                <button
+                    type="button"
+                    class="theme-toggle"
+                    id="themeToggle"
+                    aria-label="Toggle theme"
+                >
+                    ☼
+                </button>
+
+
+                <a
+                    href="contact.html"
+                    class="nav-button"
+                >
+                    Let's Talk
+                </a>
+
+            </div>
+
+
+            <!-- Mobile menu -->
+
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="experience-hero">
+
+            <div class="experience-hero-container">
+
+                <span class="experience-number">
+                    04 / EXPERIENCE
+                </span>
+
+
+                <h1>
+
+                    Learning by
+
+                    <span class="gradient-text">
+                        doing.
+                    </span>
+
+                </h1>
+
+
+                <p class="experience-description">
+
+                    My technical experience has given me the
+                    opportunity to work with real systems,
+                    troubleshoot practical problems and develop
+                    a deeper understanding of networking,
+                    hardware, software and IT infrastructure.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MAIN EXPERIENCE
+        ================================================== -->
+
+        <section class="experience-section">
+
+            <div class="section-container">
+
+
+                <div class="experience-header">
+
+                    <span class="experience-label">
+                        PROFESSIONAL EXPERIENCE
+                    </span>
+
+
+                    <h2>
+
+                        Building practical
+                        <span class="gradient-text">
+                            IT experience.
+                        </span>
+
+                    </h2>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ATTACHMENT CARD
+                ================================================== -->
+
+                <article class="experience-card">
+
+
+                    <div class="experience-top">
+
+
+                        <div>
+
+                            <span class="experience-type">
+
+                                <span
+                                    class="experience-type-dot"
+                                ></span>
+
+                                TECHNICAL ATTACHMENT
+
+                            </span>
+
+
+                            <h3>
+
+                                State Department of
+                                Social Protection and
+                                Senior Citizen Affairs
+
+                            </h3>
+
+
+                            <p class="experience-role">
+
+                                Information Technology /
+                                ICT Support
+
+                            </p>
+
+                        </div>
+
+
+                        <span class="experience-date">
+                            ATTACHMENT
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         INTRODUCTION
+                    ================================================== -->
+
+                    <div class="experience-intro">
+
+                        <p>
+
+                            During my attachment at the
+                            <strong>
+                                State Department of Social
+                                Protection and Senior Citizen
+                                Affairs
+                            </strong>,
+                            I have gained practical exposure
+                            to IT operations in a government
+                            environment. The experience has
+                            allowed me to move beyond classroom
+                            concepts and work with real
+                            networking infrastructure,
+                            hardware, software systems and
+                            technical support activities.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         LEARNING AREAS
+                    ================================================== -->
+
+                    <div class="learning-grid">
+
+
+                        <!-- Networking -->
+
+                        <div class="learning-card">
+
+                            <span class="learning-number">
+                                01
+                            </span>
+
+
+                            <div class="learning-icon">
+                                ◇
+                            </div>
+
+
+                            <h4>
+                                Network Configuration
+                            </h4>
+
+
+                            <p>
+
+                                Gained practical experience
+                                configuring and troubleshooting
+                                computer networks, including
+                                network connectivity,
+                                IP addressing and device
+                                configuration.
+
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- Cisco -->
+
+                        <div class="learning-card">
+
+                            <span class="learning-number">
+                                02
+                            </span>
+
+
+                            <div class="learning-icon">
+                                ◈
+                            </div>
+
+
+                            <h4>
+                                Cisco Networking
+                            </h4>
+
+
+                            <p>
+
+                                Developed hands-on familiarity
+                                with Cisco networking concepts,
+                                including switch configuration,
+                                VLANs and basic network
+                                troubleshooting.
+
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- VPN -->
+
+                        <div class="learning-card">
+
+                            <span class="learning-number">
+                                03
+                            </span>
+
+
+                            <div class="learning-icon">
+                                ⌁
+                            </div>
+
+
+                            <h4>
+                                VPN Technologies
+                            </h4>
+
+
+                            <p>
+
+                                Learned more about VPNs and
+                                their role in providing secure
+                                remote connectivity and
+                                communication within an
+                                organizational environment.
+
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- Hardware -->
+
+                        <div class="learning-card">
+
+                            <span class="learning-number">
+                                04
+                            </span>
+
+
+                            <div class="learning-icon">
+                                □
+                            </div>
+
+
+                            <h4>
+                                Hardware & Devices
+                            </h4>
+
+
+                            <p>
+
+                                Expanded my practical knowledge
+                                of computer hardware, peripheral
+                                devices and diagnosing common
+                                hardware-related issues.
+
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- Printers -->
+
+                        <div class="learning-card">
+
+                            <span class="learning-number">
+                                05
+                            </span>
+
+
+                            <div class="learning-icon">
+                                ▣
+                            </div>
+
+
+                            <h4>
+                                Printer Support
+                            </h4>
+
+
+                            <p>
+
+                                Gained experience working with
+                                network printers, printer
+                                configuration, connectivity,
+                                drivers and troubleshooting
+                                printing problems.
+
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- IFMIS -->
+
+                        <div class="learning-card">
+
+                            <span class="learning-number">
+                                06
+                            </span>
+
+
+                            <div class="learning-icon">
+                                ▤
+                            </div>
+
+
+                            <h4>
+                                IFMIS
+                            </h4>
+
+
+                            <p>
+
+                                Gained exposure to IFMIS and
+                                developed a better understanding
+                                of the role of information
+                                systems in government
+                                operations.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             TECHNICAL EXPERIENCE
+        ================================================== -->
+
+        <section class="technical-section">
+
+            <div class="section-container">
+
+                <div class="technical-grid">
+
+
+                    <!-- Heading -->
+
+                    <div class="technical-heading">
+
+                        <span class="experience-label">
+                            TECHNICAL GROWTH
+                        </span>
+
+
+                        <h2>
+
+                            What I've
+                            <span class="gradient-text">
+                                learned.
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+
+                            My attachment has helped me connect
+                            what I learn in IT with how technology
+                            is actually deployed, maintained and
+                            supported in a professional
+                            environment.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- Technical list -->
+
+                    <div class="technical-list">
+
+
+                        <!-- Network Configuration -->
+
+                        <div class="technical-item">
+
+                            <span
+                                class="technical-item-number"
+                            >
+                                01
+                            </span>
+
+
+                            <div>
+
+                                <h4>
+                                    Network Configuration
+                                </h4>
+
+                                <p>
+
+                                    Configuring and troubleshooting
+                                    network devices and connections.
+
+                                </p>
+
+                            </div>
+
+
+                            <span class="technical-tag">
+                                NETWORKING
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- Cisco -->
+
+                        <div class="technical-item">
+
+                            <span
+                                class="technical-item-number"
+                            >
+                                02
+                            </span>
+
+
+                            <div>
+
+                                <h4>
+                                    Cisco
+                                </h4>
+
+                                <p>
+
+                                    Practical exposure to Cisco
+                                    switches, VLANs and network
+                                    configuration concepts.
+
+                                </p>
+
+                            </div>
+
+
+                            <span class="technical-tag">
+                                CISCO
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- VPN -->
+
+                        <div class="technical-item">
+
+                            <span
+                                class="technical-item-number"
+                            >
+                                03
+                            </span>
+
+
+                            <div>
+
+                                <h4>
+                                    VPN
+                                </h4>
+
+                                <p>
+
+                                    Understanding secure remote
+                                    connectivity and VPN concepts.
+
+                                </p>
+
+                            </div>
+
+
+                            <span class="technical-tag">
+                                SECURITY
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- Hardware -->
+
+                        <div class="technical-item">
+
+                            <span
+                                class="technical-item-number"
+                            >
+                                04
+                            </span>
+
+
+                            <div>
+
+                                <h4>
+                                    Computer Hardware
+                                </h4>
+
+                                <p>
+
+                                    Diagnosing hardware and
+                                    peripheral-related issues.
+
+                                </p>
+
+                            </div>
+
+
+                            <span class="technical-tag">
+                                HARDWARE
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- Printers -->
+
+                        <div class="technical-item">
+
+                            <span
+                                class="technical-item-number"
+                            >
+                                05
+                            </span>
+
+
+                            <div>
+
+                                <h4>
+                                    Network Printers
+                                </h4>
+
+                                <p>
+
+                                    Printer setup, drivers,
+                                    connectivity and
+                                    troubleshooting.
+
+                                </p>
+
+                            </div>
+
+
+                            <span class="technical-tag">
+                                SUPPORT
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- IFMIS -->
+
+                        <div class="technical-item">
+
+                            <span
+                                class="technical-item-number"
+                            >
+                                06
+                            </span>
+
+
+                            <div>
+
+                                <h4>
+                                    IFMIS
+                                </h4>
+
+                                <p>
+
+                                    Exposure to a major
+                                    government information
+                                    management system.
+
+                                </p>
+
+                            </div>
+
+
+                            <span class="technical-tag">
+                                SYSTEMS
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             WHAT THE EXPERIENCE TAUGHT ME
+        ================================================== -->
+
+        <section class="timeline-section">
+
+            <div class="section-container">
+
+
+                <div class="timeline-header">
+
+                    <span class="experience-label">
+                        THE EXPERIENCE
+                    </span>
+
+
+                    <h2>
+
+                        More than just
+                        <span class="gradient-text">
+                            technical skills.
+                        </span>
+
+                    </h2>
+
+                </div>
+
+
+
+                <div class="timeline">
+
+
+                    <!-- Item 01 -->
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot">
+                            01
+                        </div>
+
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                From theory to practice
+                            </h3>
+
+
+                            <p>
+
+                                The attachment has allowed me
+                                to apply networking and IT
+                                concepts learned in class to
+                                real technical environments.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Item 02 -->
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot">
+                            02
+                        </div>
+
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                Troubleshooting mindset
+                            </h3>
+
+
+                            <p>
+
+                                Working with networks, printers
+                                and hardware has strengthened
+                                my ability to investigate
+                                technical problems and work
+                                toward practical solutions.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Item 03 -->
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot">
+                            03
+                        </div>
+
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                Understanding IT infrastructure
+                            </h3>
+
+
+                            <p>
+
+                                I have gained a broader
+                                understanding of how networking,
+                                hardware, software and information
+                                systems work together within an
+                                organization.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Item 04 -->
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot">
+                            04
+                        </div>
+
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                Professional growth
+                            </h3>
+
+
+                            <p>
+
+                                The experience has helped me
+                                develop confidence working with
+                                technical equipment, systems
+                                and real-world IT challenges.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CTA
+        ================================================== -->
+
+        <section class="experience-cta">
+
+            <div class="section-container">
+
+                <span class="experience-label">
+                    KEEP EXPLORING
+                </span>
+
+
+                <h2>
+
+                    Skills backed by
+
+                    <span class="gradient-text">
+                        real experience.
+                    </span>
+
+                </h2>
+
+
+                <a
+                    href="skills.html"
+                    class="btn btn-primary"
+                >
+
+                    View My Skills
+
+                    <span>
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <a
+                href="{% url 'home' %}"
+                class="logo"
+            >
+                Yvonne Anaeli<span>.</span>
+            </a>
+
+
+            <p>
+                © Yvonne Kileo.
+                All rights reserved.
+            </p>
+
+
+            <div class="footer-socials">
+
+                <a
+                    href="https://github.com/yvonne-kileo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                >
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/yvonne-kileo-14631b34b"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a
+                    href="https://www.instagram.com/ki_le_o"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1908 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Technical skills and technologies of Yvonne Kileo."
+    >
+
+    <meta
+        name="author"
+        content="Yvonne Kileo"
+    >
+
+    <title>Skills | Yvonne Kileo</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- Main CSS -->
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+    <!-- Skills Page CSS -->
+
+    <style>
+
+        /* =========================================
+           SKILLS HERO
+        ========================================= */
+
+        .skills-hero {
+
+            position: relative;
+
+            min-height: 68vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding-top: 120px;
+
+            padding-bottom: 100px;
+
+            overflow: hidden;
+
+        }
+
+
+        .skills-hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 650px;
+
+            height: 650px;
+
+            top: -250px;
+
+            right: -200px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139, 92, 246, 0.18),
+                    transparent 68%
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        .skills-hero-container {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: min(
+                calc(100% - 48px),
+                1200px
+            );
+
+            margin: 0 auto;
+
+        }
+
+
+        .skills-number {
+
+            display: block;
+
+            margin-bottom: 20px;
+
+            color: #a78bfa;
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                monospace;
+
+            font-size: 11px;
+
+            letter-spacing: 0.18em;
+
+        }
+
+
+        .skills-hero h1 {
+
+            max-width: 1000px;
+
+            font-size: clamp(
+                60px,
+                9vw,
+                120px
+            );
+
+            line-height: 0.9;
+
+            letter-spacing: -0.07em;
+
+            font-weight: 800;
+
+        }
+
+
+        .skills-description {
+
+            max-width: 680px;
+
+            margin-top: 35px;
+
+            color: var(--text-secondary);
+
+            font-size: 16px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* =========================================
+           SKILLS INTRO
+        ========================================= */
+
+        .skills-intro {
+
+            padding: 100px 0;
+
+            background: var(--bg-secondary);
+
+            border-top: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--border);
+
+        }
+
+
+        .skills-intro-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                0.7fr
+                1.3fr;
+
+            gap: 80px;
+
+        }
+
+
+        .section-label {
+
+            color: var(--accent-light);
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.2em;
+
+        }
+
+
+        .skills-intro-content h2 {
+
+            max-width: 850px;
+
+            font-size: clamp(
+                38px,
+                5vw,
+                65px
+            );
+
+            line-height: 1;
+
+            letter-spacing: -0.06em;
+
+        }
+
+
+        .skills-intro-content p {
+
+            max-width: 750px;
+
+            margin-top: 30px;
+
+            color: var(--text-secondary);
+
+            font-size: 15px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* =========================================
+           SKILLS DASHBOARD
+        ========================================= */
+
+        .skills-dashboard {
+
+            padding: 140px 0;
+
+        }
+
+
+        .skills-heading {
+
+            margin-bottom: 60px;
+
+        }
+
+
+        .skills-heading h2 {
+
+            margin-top: 15px;
+
+            font-size: clamp(
+                40px,
+                5vw,
+                68px
+            );
+
+            line-height: 1;
+
+            letter-spacing: -0.06em;
+
+        }
+
+
+        .skills-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+
+        }
+
+
+        /* =========================================
+           SKILL CARD
+        ========================================= */
+
+        .skill-card {
+
+            position: relative;
+
+            padding: 35px;
+
+            min-height: 340px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.05),
+                    rgba(255,255,255,0.015)
+                );
+
+            overflow: hidden;
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease;
+
+        }
+
+
+        .skill-card:hover {
+
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(167,139,250,0.35);
+
+        }
+
+
+        .skill-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 200px;
+
+            height: 200px;
+
+            right: -100px;
+
+            bottom: -100px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139,92,246,0.15),
+                    transparent 70%
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        .skill-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-start;
+
+        }
+
+
+        .skill-number {
+
+            color: var(--text-muted);
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                monospace;
+
+            font-size: 11px;
+
+        }
+
+
+        .skill-icon {
+
+            width: 50px;
+
+            height: 50px;
+
+            display: grid;
+
+            place-items: center;
+
+            color: var(--accent-light);
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            background:
+                rgba(139,92,246,0.08);
+
+            font-size: 17px;
+
+        }
+
+
+        .skill-card h3 {
+
+            margin-top: 55px;
+
+            font-size: 27px;
+
+            letter-spacing: -0.04em;
+
+        }
+
+
+        .skill-card-description {
+
+            margin-top: 12px;
+
+            color: var(--text-muted);
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =========================================
+           TECHNOLOGY TAGS
+        ========================================= */
+
+        .technology-list {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 25px;
+
+        }
+
+
+        .technology {
+
+            padding: 7px 11px;
+
+            color: var(--text-secondary);
+
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            font-size: 10px;
+
+            transition:
+                color 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease;
+
+        }
+
+
+        .technology:hover {
+
+            color: var(--text);
+
+            border-color:
+                rgba(167,139,250,0.35);
+
+            background:
+                rgba(139,92,246,0.08);
+
+        }
+
+
+        /* =========================================
+           SKILL LEVELS
+        ========================================= */
+
+        .skill-level {
+
+            position: absolute;
+
+            left: 35px;
+
+            right: 35px;
+
+            bottom: 30px;
+
+        }
+
+
+        .skill-level-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 9px;
+
+        }
+
+
+        .skill-level-header span {
+
+            color: var(--text-muted);
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                monospace;
+
+            font-size: 9px;
+
+        }
+
+
+        .skill-bar {
+
+            width: 100%;
+
+            height: 4px;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,0.07);
+
+        }
+
+
+        .skill-progress {
+
+            height: 100%;
+
+            width: 0;
+
+            border-radius: inherit;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #7c3aed,
+                    #a78bfa
+                );
+
+            animation:
+                fillBar 1.5s ease forwards;
+
+        }
+
+
+        .progress-python {
+
+            --progress: 78%;
+
+        }
+
+
+        .progress-web {
+
+            --progress: 82%;
+
+        }
+
+
+        .progress-database {
+
+            --progress: 72%;
+
+        }
+
+
+        .progress-networking {
+
+            --progress: 68%;
+
+        }
+
+
+        @keyframes fillBar {
+
+            from {
+                width: 0;
+            }
+
+            to {
+                width: var(--progress);
+            }
+
+        }
+
+
+        /* =========================================
+           TOOLS SECTION
+        ========================================= */
+
+        .tools {
+
+            padding: 130px 0;
+
+            background: var(--bg-secondary);
+
+            border-top: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--border);
+
+        }
+
+
+        .tools-heading {
+
+            margin-bottom: 55px;
+
+        }
+
+
+        .tools-heading h2 {
+
+            margin-top: 15px;
+
+            font-size: clamp(
+                38px,
+                5vw,
+                62px
+            );
+
+            line-height: 1;
+
+            letter-spacing: -0.06em;
+
+        }
+
+
+        .tools-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+
+        }
+
+
+        .tool-item {
+
+            min-height: 120px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 12px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 16px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
+
+        }
+
+
+        .tool-item:hover {
+
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(167,139,250,0.35);
+
+            background:
+                rgba(139,92,246,0.06);
+
+        }
+
+
+        .tool-symbol {
+
+            color: var(--accent-light);
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                monospace;
+
+            font-size: 18px;
+
+        }
+
+
+        .tool-item span:last-child {
+
+            color: var(--text-secondary);
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================
+           LEARNING SECTION
+        ========================================= */
+
+        .learning {
+
+            padding: 140px 0;
+
+        }
+
+
+        .learning-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                0.7fr
+                1.3fr;
+
+            gap: 80px;
+
+        }
+
+
+        .learning-content h2 {
+
+            max-width: 800px;
+
+            font-size: clamp(
+                40px,
+                5vw,
+                68px
+            );
+
+            line-height: 1;
+
+            letter-spacing: -0.06em;
+
+        }
+
+
+        .learning-content > p {
+
+            max-width: 700px;
+
+            margin-top: 25px;
+
+            color: var(--text-secondary);
+
+            font-size: 15px;
+
+            line-height: 1.9;
+
+        }
+
+
+        .learning-list {
+
+            margin-top: 45px;
+
+            border-top: 1px solid var(--border);
+
+        }
+
+
+        .learning-item {
+
+            display: grid;
+
+            grid-template-columns:
+                55px
+                1fr;
+
+            gap: 20px;
+
+            padding: 24px 0;
+
+            border-bottom: 1px solid var(--border);
+
+        }
+
+
+        .learning-item > span {
+
+            color: var(--accent-light);
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                monospace;
+
+            font-size: 10px;
+
+        }
+
+
+        .learning-item h3 {
+
+            font-size: 16px;
+
+        }
+
+
+        .learning-item p {
+
+            margin-top: 7px;
+
+            color: var(--text-muted);
+
+            font-size: 12px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =========================================
+           CTA
+        ========================================= */
+
+        .skills-cta {
+
+            padding: 150px 0;
+
+            text-align: center;
+
+            background: var(--bg-secondary);
+
+            border-top: 1px solid var(--border);
+
+        }
+
+
+        .skills-cta h2 {
+
+            max-width: 850px;
+
+            margin: 20px auto 35px;
+
+            font-size: clamp(
+                45px,
+                6vw,
+                80px
+            );
+
+            line-height: 0.95;
+
+            letter-spacing: -0.07em;
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 850px) {
+
+            .skills-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .tools-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .skills-intro-grid,
+            .learning-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .skills-hero {
+
+                min-height: auto;
+
+                padding-top: 130px;
+
+                padding-bottom: 90px;
+
+            }
+
+
+            .skills-hero-container {
+
+                width:
+                    calc(100% - 32px);
+
+            }
+
+
+            .skill-card {
+
+                min-height: 360px;
+
+            }
+
+
+            .tools-grid {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+
+            <a href="{% url 'home' %}" class="logo">
+                YK<span>.</span>
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="{% url 'home' %}">
+                    Home
+                </a>
+
+                <a href="{% url 'about' %}" class="active">
+                    About
+                </a>
+
+                <a href="{% url 'skills' %}">
+                    Skills
+                </a>
+
+                <a href="{% url 'projects' %}">
+                    Projects
+                </a>
+
+                <a href="{% url 'experience' %}">
+                    Experience
+                </a>
+
+                <a href="{% url 'contact' %}">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+                <button
+                    type="button"
+                    class="theme-toggle"
+                    id="themeToggle"
+                    aria-label="Toggle theme"
+                >
+                    ☼
+                </button>
+
+
+                <a
+                    href="{% url 'contact' %}"
+                    class="nav-button"
+                >
+                    Let's Talk
+                </a>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="skills-hero">
+
+            <div class="skills-hero-container">
+
+                <span class="skills-number">
+                    02 / SKILLS
+                </span>
+
+
+                <h1>
+
+                    The tools I use
+                    to turn ideas into
+
+                    <span class="gradient-text">
+                        systems.
+                    </span>
+
+                </h1>
+
+
+                <p class="skills-description">
+
+                    A growing collection of technical skills,
+                    technologies and tools I've developed through
+                    coursework, projects, practical experience
+                    and continuous learning.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             INTRO
+        ================================================== -->
+
+        <section class="skills-intro">
+
+            <div class="section-container">
+
+                <div class="skills-intro-grid">
+
+
+                    <div>
+
+                        <span class="section-label">
+                            MY TOOLKIT
+                        </span>
+
+                    </div>
+
+
+                    <div class="skills-intro-content">
+
+                        <h2>
+
+                            Technology is a
+                            <span class="gradient-text">
+                                means to an end.
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+
+                            I don't see programming languages and
+                            software tools as isolated skills.
+                            I see them as tools for solving
+                            problems and creating useful systems.
+
+                        </p>
+
+
+                        <p>
+
+                            My strongest interests currently sit
+                            around web development, backend
+                            systems, databases and networking.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CORE SKILLS
+        ================================================== -->
+
+        <section class="skills-dashboard">
+
+            <div class="section-container">
+
+
+                <div class="skills-heading">
+
+                    <span class="section-label">
+                        CORE SKILLS
+                    </span>
+
+
+                    <h2>
+
+                        What I work
+                        <span class="gradient-text">
+                            with.
+                        </span>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+
+                    <!-- PYTHON -->
+
+                    <article class="skill-card">
+
+                        <div class="skill-top">
+
+                            <span class="skill-number">
+                                01
+                            </span>
+
+                            <div class="skill-icon">
+                                Py
+                            </div>
+
+                        </div>
+
+
+                        <h3>
+                            Python & Backend
+                        </h3>
+
+
+                        <p class="skill-card-description">
+
+                            Building application logic, backend
+                            functionality and APIs using Python
+                            and Django.
+
+                        </p>
+
+
+                        <div class="technology-list">
+
+                            <span class="technology">
+                                Python
+                            </span>
+
+                            <span class="technology">
+                                Django
+                            </span>
+
+                            <span class="technology">
+                                Django REST Framework
+                            </span>
+
+                            <span class="technology">
+                                JWT
+                            </span>
+
+                        </div>
+
+
+                        <div class="skill-level">
+
+                            <div class="skill-level-header">
+
+                                <span>
+                                    CURRENT LEVEL
+                                </span>
+
+                                <span>
+                                    78%
+                                </span>
+
+                            </div>
+
+
+                            <div class="skill-bar">
+
+                                <div
+                                    class="skill-progress progress-python"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- WEB -->
+
+                    <article class="skill-card">
+
+                        <div class="skill-top">
+
+                            <span class="skill-number">
+                                02
+                            </span>
+
+                            <div class="skill-icon">
+                                &lt;/&gt;
+                            </div>
+
+                        </div>
+
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+
+                        <p class="skill-card-description">
+
+                            Creating responsive websites and
+                            interfaces using modern frontend
+                            technologies.
+
+                        </p>
+
+
+                        <div class="technology-list">
+
+                            <span class="technology">
+                                HTML
+                            </span>
+
+                            <span class="technology">
+                                CSS
+                            </span>
+
+                            <span class="technology">
+                                JavaScript
+                            </span>
+
+                            <span class="technology">
+                                Bootstrap
+                            </span>
+
+                        </div>
+
+
+                        <div class="skill-level">
+
+                            <div class="skill-level-header">
+
+                                <span>
+                                    CURRENT LEVEL
+                                </span>
+
+                                <span>
+                                    82%
+                                </span>
+
+                            </div>
+
+
+                            <div class="skill-bar">
+
+                                <div
+                                    class="skill-progress progress-web"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- DATABASE -->
+
+                    <article class="skill-card">
+
+                        <div class="skill-top">
+
+                            <span class="skill-number">
+                                03
+                            </span>
+
+                            <div class="skill-icon">
+                                DB
+                            </div>
+
+                        </div>
+
+
+                        <h3>
+                            Databases
+                        </h3>
+
+
+                        <p class="skill-card-description">
+
+                            Working with relational databases,
+                            data modelling and application
+                            data structures.
+
+                        </p>
+
+
+                        <div class="technology-list">
+
+                            <span class="technology">
+                                MySQL
+                            </span>
+
+                            <span class="technology">
+                                MariaDB
+                            </span>
+
+                            <span class="technology">
+                                SQL
+                            </span>
+
+                            <span class="technology">
+                                MySQL Workbench
+                            </span>
+
+                        </div>
+
+
+                        <div class="skill-level">
+
+                            <div class="skill-level-header">
+
+                                <span>
+                                    CURRENT LEVEL
+                                </span>
+
+                                <span>
+                                    72%
+                                </span>
+
+                            </div>
+
+
+                            <div class="skill-bar">
+
+                                <div
+                                    class="skill-progress progress-database"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- NETWORKING -->
+
+                    <article class="skill-card">
+
+                        <div class="skill-top">
+
+                            <span class="skill-number">
+                                04
+                            </span>
+
+                            <div class="skill-icon">
+                                ◌
+                            </div>
+
+                        </div>
+
+
+                        <h3>
+                            Networking
+                        </h3>
+
+
+                        <p class="skill-card-description">
+
+                            Understanding and troubleshooting
+                            computer networks and infrastructure.
+
+                        </p>
+
+
+                        <div class="technology-list">
+
+                            <span class="technology">
+                                TCP/IP
+                            </span>
+
+                            <span class="technology">
+                                VLANs
+                            </span>
+
+                            <span class="technology">
+                                Routing
+                            </span>
+
+                            <span class="technology">
+                                Troubleshooting
+                            </span>
+
+                        </div>
+
+
+                        <div class="skill-level">
+
+                            <div class="skill-level-header">
+
+                                <span>
+                                    CURRENT LEVEL
+                                </span>
+
+                                <span>
+                                    68%
+                                </span>
+
+                            </div>
+
+
+                            <div class="skill-bar">
+
+                                <div
+                                    class="skill-progress progress-networking"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             TOOLS
+        ================================================== -->
+
+        <section class="tools">
+
+            <div class="section-container">
+
+
+                <div class="tools-heading">
+
+                    <span class="section-label">
+                        TOOLS & TECHNOLOGIES
+                    </span>
+
+
+                    <h2>
+
+                        The environment
+                        behind the work.
+
+                    </h2>
+
+                </div>
+
+
+                <div class="tools-grid">
+
+
+                    <div class="tool-item">
+
+                        <span class="tool-symbol">
+                            PY
+                        </span>
+
+                        <span>
+                            Python
+                        </span>
+
+                    </div>
+
+
+                    <div class="tool-item">
+
+                        <span class="tool-symbol">
+                            DJ
+                        </span>
+
+                        <span>
+                            Django
+                        </span>
+
+                    </div>
+
+
+                    <div class="tool-item">
+
+                        <span class="tool-symbol">
+                            JS
+                        </span>
+
+                        <span>
+                            JavaScript
+                        </span>
+
+                    </div>
+
+
+                    <div class="tool-item">
+
+                        <span class="tool-symbol">
+                            DB
+                        </span>
+
+                        <span>
+                            MySQL
+                        </span>
+
+                    </div>
+
+
+                    <div class="tool-item">
+
+                        <span class="tool-symbol">
+                            VS
+                        </span>
+
+                        <span>
+                            VS Code
+                        </span>
+
+                    </div>
+
+
+                    <div class="tool-item">
+
+                        <span class="tool-symbol">
+                            GH
+                        </span>
+
+                        <span>
+                            Git / GitHub
+                        </span>
+
+                    </div>
+
+
+                    <div class="tool-item">
+
+                        <span class="tool-symbol">
+                            API
+                        </span>
+
+                        <span>
+                            REST APIs
+                        </span>
+
+                    </div>
+
+
+                    <div class="tool-item">
+
+                        <span class="tool-symbol">
+                            XP
+                        </span>
+
+                        <span>
+                            XAMPP
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LEARNING
+        ================================================== -->
+
+        <section class="learning">
+
+            <div class="section-container">
+
+                <div class="learning-grid">
+
+
+                    <div>
+
+                        <span class="section-label">
+                            CURRENTLY LEARNING
+                        </span>
+
+                    </div>
+
+
+                    <div class="learning-content">
+
+                        <h2>
+
+                            Skills are never
+                            <span class="gradient-text">
+                                finished.
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+
+                            Technology changes constantly, so I'm
+                            continuing to expand my knowledge beyond
+                            the tools I already use.
+
+                        </p>
+
+
+                        <div class="learning-list">
+
+
+                            <div class="learning-item">
+
+                                <span>
+                                    01
+                                </span>
+
+                                <div>
+
+                                    <h3>
+                                        Advanced JavaScript
+                                    </h3>
+
+                                    <p>
+                                        Improving my understanding
+                                        of modern JavaScript and
+                                        interactive interfaces.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="learning-item">
+
+                                <span>
+                                    02
+                                </span>
+
+                                <div>
+
+                                    <h3>
+                                        API Development
+                                    </h3>
+
+                                    <p>
+                                        Building more robust APIs
+                                        and connecting frontend
+                                        applications to backend
+                                        services.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="learning-item">
+
+                                <span>
+                                    03
+                                </span>
+
+                                <div>
+
+                                    <h3>
+                                        Network Infrastructure
+                                    </h3>
+
+                                    <p>
+                                        Strengthening practical
+                                        networking and
+                                        troubleshooting skills.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="learning-item">
+
+                                <span>
+                                    04
+                                </span>
+
+                                <div>
+
+                                    <h3>
+                                        UI & UX Design
+                                    </h3>
+
+                                    <p>
+                                        Learning how thoughtful
+                                        interface design can make
+                                        applications easier to use.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CTA
+        ================================================== -->
+
+        <section class="skills-cta">
+
+            <div class="section-container">
+
+                <span class="section-label">
+                    NEXT
+                </span>
+
+
+                <h2>
+
+                    Now let's put
+                    these skills to
+
+                    <span class="gradient-text">
+                        work.
+                    </span>
+
+                </h2>
+
+
+                <a
+                    href="projects.html"
+                    class="btn btn-primary"
+                >
+
+                    View My Projects
+
+                    <span>
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <a
+                href="{% url 'home' %}"
+                class="logo"
+            >
+                Yvonne Anaeli<span>.</span>
+            </a>
+
+
+            <p>
+                © Yvonne Kileo.
+                All rights reserved.
+            </p>
+
+
+            <div class="footer-socials">
+
+                <a
+                    href="https://github.com/yvonne-kileo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                >
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/yvonne-kileo-14631b34b"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a
+                    href="https://www.instagram.com/ki_le_o"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="{% static 'script.js' %}"></script>
+
+</body>
+
+</html>

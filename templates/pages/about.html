@@ -1,0 +1,1572 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =========================
+         BASIC SETTINGS
+    ========================== -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Learn more about Yvonne Kileo, an Information Technology student and developer."
+    >
+
+    <meta
+        name="author"
+        content="Yvonne Kileo"
+    >
+
+    <title>About | Yvonne Kileo</title>
+
+
+    <!-- =========================
+         GOOGLE FONT
+    ========================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =========================
+         MAIN CSS
+    ========================== -->
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+    <!-- =========================
+         ABOUT PAGE CSS
+    ========================== -->
+
+    <style>
+
+        /* =========================================
+           ABOUT HERO
+        ========================================= */
+
+        .about-hero {
+            position: relative;
+            min-height: 70vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 120px;
+            padding-bottom: 100px;
+
+            overflow: hidden;
+        }
+
+
+        .about-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 600px;
+            height: 600px;
+
+            top: -250px;
+            right: -200px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139, 92, 246, 0.16),
+                    transparent 65%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .about-hero-container {
+            position: relative;
+            z-index: 2;
+
+            width: min(
+                100% - 48px,
+                1200px
+            );
+
+            margin: 0 auto;
+        }
+
+
+        .about-number {
+            display: block;
+
+            margin-bottom: 20px;
+
+            color: #a78bfa;
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                monospace;
+
+            font-size: 12px;
+
+            letter-spacing: 0.15em;
+        }
+
+
+        .about-hero h1 {
+            max-width: 950px;
+
+            font-size: clamp(
+                60px,
+                9vw,
+                120px
+            );
+
+            line-height: 0.9;
+
+            letter-spacing: -0.07em;
+
+            font-weight: 800;
+        }
+
+
+        .about-hero-description {
+            max-width: 650px;
+
+            margin-top: 35px;
+
+            color: var(--text-secondary);
+
+            font-size: 17px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================
+           ABOUT INTRO
+        ========================================= */
+
+        .about-intro {
+            padding: 130px 0;
+
+            background: var(--bg-secondary);
+
+            border-top: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .about-intro-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                0.7fr
+                1.3fr;
+
+            gap: 80px;
+        }
+
+
+        .about-section-label {
+
+            color: var(--accent-light);
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.2em;
+        }
+
+
+        .about-intro-content h2 {
+
+            max-width: 850px;
+
+            font-size: clamp(
+                36px,
+                5vw,
+                65px
+            );
+
+            line-height: 1.05;
+
+            letter-spacing: -0.05em;
+        }
+
+
+        .about-intro-content p {
+
+            max-width: 750px;
+
+            margin-top: 30px;
+
+            color: var(--text-secondary);
+
+            font-size: 15px;
+
+            line-height: 2;
+        }
+
+
+        /* =========================================
+           WHAT I DO
+        ========================================= */
+
+        .what-i-do {
+
+            padding: 140px 0;
+        }
+
+
+        .about-heading {
+
+            max-width: 700px;
+
+            margin-bottom: 60px;
+        }
+
+
+        .about-heading h2 {
+
+            margin-top: 15px;
+
+            font-size: clamp(
+                40px,
+                5vw,
+                65px
+            );
+
+            line-height: 1;
+
+            letter-spacing: -0.06em;
+        }
+
+
+        .services-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .service-card {
+
+            position: relative;
+
+            min-height: 280px;
+
+            padding: 35px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.05),
+                    rgba(255,255,255,0.015)
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                background 0.35s ease;
+        }
+
+
+        .service-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            top: -90px;
+            right: -90px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139,92,246,0.18),
+                    transparent 70%
+                );
+
+            transition:
+                transform 0.5s ease;
+        }
+
+
+        .service-card:hover {
+
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(167,139,250,0.3);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.07),
+                    rgba(255,255,255,0.02)
+                );
+        }
+
+
+        .service-card:hover::before {
+
+            transform: scale(1.5);
+        }
+
+
+        .service-number {
+
+            color: var(--text-muted);
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                monospace;
+
+            font-size: 11px;
+        }
+
+
+        .service-card h3 {
+
+            margin-top: auto;
+
+            font-size: 27px;
+
+            letter-spacing: -0.04em;
+        }
+
+
+        .service-card p {
+
+            max-width: 430px;
+
+            margin-top: 15px;
+
+            color: var(--text-muted);
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+
+        .service-icon {
+
+            position: absolute;
+
+            top: 30px;
+            right: 30px;
+
+            width: 48px;
+            height: 48px;
+
+            display: grid;
+            place-items: center;
+
+            color: var(--accent-light);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            background:
+                rgba(139,92,246,0.08);
+
+            font-size: 18px;
+        }
+
+
+        /* =========================================
+           APPROACH
+        ========================================= */
+
+        .approach {
+
+            padding: 140px 0;
+
+            background: var(--bg-secondary);
+
+            border-top: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .approach-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                0.7fr
+                1.3fr;
+
+            gap: 80px;
+        }
+
+
+        .approach-content h2 {
+
+            max-width: 800px;
+
+            font-size: clamp(
+                38px,
+                5vw,
+                65px
+            );
+
+            line-height: 1;
+
+            letter-spacing: -0.06em;
+        }
+
+
+        .approach-content > p {
+
+            max-width: 720px;
+
+            margin-top: 30px;
+
+            color: var(--text-secondary);
+
+            font-size: 15px;
+
+            line-height: 1.9;
+        }
+
+
+        .approach-list {
+
+            margin-top: 45px;
+
+            border-top: 1px solid var(--border);
+        }
+
+
+        .approach-item {
+
+            display: grid;
+
+            grid-template-columns:
+                60px
+                1fr;
+
+            gap: 25px;
+
+            padding: 25px 0;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .approach-item span {
+
+            color: var(--accent-light);
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                monospace;
+
+            font-size: 11px;
+        }
+
+
+        .approach-item h3 {
+
+            font-size: 16px;
+
+            font-weight: 600;
+        }
+
+
+        .approach-item p {
+
+            margin-top: 7px;
+
+            color: var(--text-muted);
+
+            font-size: 12px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           EDUCATION
+        ========================================= */
+
+        .education {
+
+            padding: 140px 0;
+        }
+
+
+        .education-card {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                auto;
+
+            gap: 40px;
+
+            padding: 45px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(139,92,246,0.09),
+                    rgba(79,140,255,0.04)
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 24px;
+        }
+
+
+        .education-card small {
+
+            color: var(--accent-light);
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.15em;
+        }
+
+
+        .education-card h2 {
+
+            margin-top: 15px;
+
+            font-size: clamp(
+                28px,
+                4vw,
+                45px
+            );
+
+            letter-spacing: -0.05em;
+        }
+
+
+        .education-card p {
+
+            margin-top: 12px;
+
+            color: var(--text-secondary);
+
+            font-size: 14px;
+        }
+
+
+        .education-year {
+
+            align-self: center;
+
+            color: var(--text-muted);
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                monospace;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================
+           CURRENT FOCUS
+        ========================================= */
+
+        .focus {
+
+            padding: 130px 0;
+
+            background: var(--bg-secondary);
+
+            border-top: 1px solid var(--border);
+        }
+
+
+        .focus-content {
+
+            max-width: 850px;
+        }
+
+
+        .focus-content h2 {
+
+            margin-top: 15px;
+
+            font-size: clamp(
+                40px,
+                5vw,
+                70px
+            );
+
+            line-height: 1;
+
+            letter-spacing: -0.06em;
+        }
+
+
+        .focus-content p {
+
+            margin-top: 30px;
+
+            color: var(--text-secondary);
+
+            font-size: 15px;
+
+            line-height: 1.9;
+        }
+
+
+        .focus-tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 30px;
+        }
+
+
+        .focus-tags span {
+
+            padding: 9px 14px;
+
+            color: var(--text-secondary);
+
+            background:
+                rgba(255,255,255,0.04);
+
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+
+            font-size: 10px;
+        }
+
+
+        /* =========================================
+           ABOUT CTA
+        ========================================= */
+
+        .about-cta {
+
+            padding: 150px 0;
+
+            text-align: center;
+        }
+
+
+        .about-cta h2 {
+
+            max-width: 800px;
+
+            margin: 20px auto 35px;
+
+            font-size: clamp(
+                45px,
+                6vw,
+                80px
+            );
+
+            line-height: 0.95;
+
+            letter-spacing: -0.06em;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 800px) {
+
+            .about-hero {
+                min-height: auto;
+
+                padding-top: 130px;
+                padding-bottom: 90px;
+            }
+
+
+            .about-hero-container {
+                width: min(
+                    100% - 32px,
+                    1200px
+                );
+            }
+
+
+            .about-intro-grid,
+            .approach-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+
+            .services-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .education-card {
+
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+
+                padding: 30px;
+            }
+
+
+            .education-year {
+
+                align-self: auto;
+            }
+
+
+            .service-card {
+
+                min-height: 250px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+
+            <!-- Logo -->
+
+            <a href="{% url 'home' %}" class="logo">
+                YK<span>.</span>
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="{% url 'home' %}">
+                    Home
+                </a>
+
+                <a href="{% url 'about' %}" class="active">
+                    About
+                </a>
+
+                <a href="{% url 'skills' %}">
+                    Skills
+                </a>
+
+                <a href="{% url 'projects' %}">
+                    Projects
+                </a>
+
+                <a href="{% url 'experience' %}">
+                    Experience
+                </a>
+
+                <a href="{% url 'contact' %}">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- Actions -->
+
+            <div class="nav-actions">
+
+                <button
+                    type="button"
+                    class="theme-toggle"
+                    id="themeToggle"
+                    aria-label="Toggle theme"
+                >
+                    ☼
+                </button>
+
+                <a
+                    href="{% url 'contact' %}"
+                    class="nav-button"
+                >
+                    Let's Talk
+                </a>
+
+            </div>
+
+
+            <!-- Mobile menu -->
+
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             ABOUT HERO
+        ================================================== -->
+
+        <section class="about-hero">
+
+            <div class="about-hero-container">
+
+                <span class="about-number">
+                    01 / ABOUT
+                </span>
+
+
+                <h1>
+
+                    Building my path
+                    through
+
+                    <span class="gradient-text">
+                        technology.
+                    </span>
+
+                </h1>
+
+
+                <p class="about-hero-description">
+
+                    I'm Yvonne Kileo, an Information Technology
+                    student and aspiring developer interested in
+                    building practical digital solutions and
+                    understanding the systems that make technology
+                    work.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             INTRODUCTION
+        ================================================== -->
+
+        <section class="about-intro">
+
+            <div class="section-container">
+
+                <div class="about-intro-grid">
+
+
+                    <div>
+
+                        <span class="about-section-label">
+                            WHO I AM
+                        </span>
+
+                    </div>
+
+
+                    <div class="about-intro-content">
+
+                        <h2>
+
+                            I'm curious about how
+                            <span class="gradient-text">
+                                technology works.
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+
+                            My journey in Information Technology
+                            has given me the opportunity to explore
+                            different areas of technology, from
+                            software development and databases to
+                            computer networks and system design.
+
+                        </p>
+
+
+                        <p>
+
+                            What interests me most is taking a
+                            problem that exists in the real world
+                            and thinking about how technology can
+                            make the process easier, faster and
+                            more organized.
+
+                        </p>
+
+
+                        <p>
+
+                            I'm continuously developing my skills
+                            through academic projects, practical
+                            work and personal experimentation.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             WHAT I DO
+        ================================================== -->
+
+        <section class="what-i-do">
+
+            <div class="section-container">
+
+
+                <div class="about-heading">
+
+                    <span class="about-section-label">
+                        WHAT I DO
+                    </span>
+
+                    <h2>
+
+                        Areas I'm
+                        <span class="gradient-text">
+                            exploring.
+                        </span>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="services-grid">
+
+
+                    <!-- Software -->
+
+                    <article class="service-card">
+
+                        <span class="service-number">
+                            01
+                        </span>
+
+                        <span class="service-icon">
+                            &lt;/&gt;
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Software Development
+                            </h3>
+
+                            <p>
+
+                                Building web applications and
+                                backend systems using technologies
+                                such as Python and Django.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Web -->
+
+                    <article class="service-card">
+
+                        <span class="service-number">
+                            02
+                        </span>
+
+                        <span class="service-icon">
+                            ◇
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Web Development
+                            </h3>
+
+                            <p>
+
+                                Creating responsive interfaces
+                                that combine clean design with
+                                useful functionality.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Database -->
+
+                    <article class="service-card">
+
+                        <span class="service-number">
+                            03
+                        </span>
+
+                        <span class="service-icon">
+                            DB
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Database Systems
+                            </h3>
+
+                            <p>
+
+                                Designing and working with
+                                structured data, relational
+                                databases and application
+                                data models.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Networking -->
+
+                    <article class="service-card">
+
+                        <span class="service-number">
+                            04
+                        </span>
+
+                        <span class="service-icon">
+                            ◌
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Networking
+                            </h3>
+
+                            <p>
+
+                                Learning and applying networking
+                                concepts including IP addressing,
+                                VLANs, troubleshooting and
+                                network infrastructure.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             APPROACH
+        ================================================== -->
+
+        <section class="approach">
+
+            <div class="section-container">
+
+                <div class="approach-grid">
+
+
+                    <div>
+
+                        <span class="about-section-label">
+                            MY APPROACH
+                        </span>
+
+                    </div>
+
+
+                    <div class="approach-content">
+
+                        <h2>
+
+                            Learn.
+                            Build.
+                            <span class="gradient-text">
+                                Improve.
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+
+                            I believe the best way to understand
+                            technology is to work with it. Every
+                            project gives me an opportunity to
+                            learn something new, solve problems and
+                            improve the way I approach development.
+
+                        </p>
+
+
+                        <div class="approach-list">
+
+
+                            <div class="approach-item">
+
+                                <span>
+                                    01
+                                </span>
+
+                                <div>
+
+                                    <h3>
+                                        Understand the problem
+                                    </h3>
+
+                                    <p>
+
+                                        Before building anything,
+                                        I focus on understanding
+                                        what needs to be solved.
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="approach-item">
+
+                                <span>
+                                    02
+                                </span>
+
+                                <div>
+
+                                    <h3>
+                                        Design the solution
+                                    </h3>
+
+                                    <p>
+
+                                        I break the problem into
+                                        smaller parts and think
+                                        about how the technology
+                                        should work.
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="approach-item">
+
+                                <span>
+                                    03
+                                </span>
+
+                                <div>
+
+                                    <h3>
+                                        Build and test
+                                    </h3>
+
+                                    <p>
+
+                                        I turn the idea into a
+                                        working system and test
+                                        it to identify problems.
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="approach-item">
+
+                                <span>
+                                    04
+                                </span>
+
+                                <div>
+
+                                    <h3>
+                                        Keep improving
+                                    </h3>
+
+                                    <p>
+
+                                        Every project is an
+                                        opportunity to improve
+                                        both the solution and
+                                        my skills.
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             EDUCATION
+        ================================================== -->
+
+        <section class="education">
+
+            <div class="section-container">
+
+                <div class="about-heading">
+
+                    <span class="about-section-label">
+                        EDUCATION
+                    </span>
+
+                    <h2>
+                        Where I'm
+                        <span class="gradient-text">
+                            learning.
+                        </span>
+                    </h2>
+
+                </div>
+
+
+                <div class="education-card">
+
+                    <div>
+
+                        <small>
+                            CURRENT EDUCATION
+                        </small>
+
+
+                        <h2>
+                            Technical University
+                            of Kenya
+                        </h2>
+
+
+                        <p>
+                            Diploma in Technology —
+                            Information Technology
+                        </p>
+
+                    </div>
+
+
+                    <div class="education-year">
+                        2023 — 2026
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CURRENT FOCUS
+        ================================================== -->
+
+        <section class="focus">
+
+            <div class="section-container">
+
+                <div class="focus-content">
+
+                    <span class="about-section-label">
+                        CURRENT FOCUS
+                    </span>
+
+
+                    <h2>
+
+                        Growing from a student
+                        into a
+
+                        <span class="gradient-text">
+                            technology professional.
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        I'm currently focused on strengthening
+                        my practical development and networking
+                        skills while building projects that
+                        demonstrate what I can do.
+
+                    </p>
+
+
+                    <div class="focus-tags">
+
+                        <span>
+                            Python
+                        </span>
+
+                        <span>
+                            Django
+                        </span>
+
+                        <span>
+                            JavaScript
+                        </span>
+
+                        <span>
+                            MySQL
+                        </span>
+
+                        <span>
+                            REST APIs
+                        </span>
+
+                        <span>
+                            Networking
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CTA
+        ================================================== -->
+
+        <section class="about-cta">
+
+            <div class="section-container">
+
+                <span class="about-section-label">
+                    WHAT'S NEXT?
+                </span>
+
+
+                <h2>
+
+                    Let's see what
+                    we can
+
+                    <span class="gradient-text">
+                        build.
+                    </span>
+
+                </h2>
+
+
+                <a
+                    href="projects.html"
+                    class="btn btn-primary"
+                >
+
+                    Explore My Projects
+
+                    <span>
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <a
+                href="{% url 'home' %}"
+                class="logo"
+            >
+                Yvonne Anaeli<span>.</span>
+            </a>
+
+
+            <p>
+                © Yvonne Kileo.
+                All rights reserved.
+            </p>
+
+
+            <div class="footer-socials">
+
+                <a
+                    href="https://github.com/yvonne-kileo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                >
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/yvonne-kileo-14631b34b"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a
+                    href="https://www.instagram.com/ki_le_o"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="{% static 'script.js' %}"></script>
+
+</body>
+
+</html>
